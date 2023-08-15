@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+{{ super() }}
+<center>
+<h1 class="fade-in">Login</h1>
+<style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInAnimation ease-in-out 2s forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="/login" method="post" class="fade-in">
+    <label for="username">Username</label>
+    <br>
+    <input type="text" name="username" value="{{username}}" required style="text-align: center; border-radius: 8px ">
+    <br>
+    <label for="password">Password</label>
+    <br>
+    <input type="password" name="password" value="{{password}}" required style="text-align: center; border-radius: 8px">
+    <br>
+    <br>
+    <input type="submit" name="login" value="Login" required style="text-align: center; border-radius: 5px">
+</form>
+</center>
+{% endblock %}
+

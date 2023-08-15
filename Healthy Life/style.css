@@ -1,0 +1,28 @@
+.hero{
+    width: 90%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(77, 219, 11, 0.3), rgba(12,3,51,0.3)); 
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-video{
+   position: absolute; 
+   right: 1px;
+   bottom: 1px;
+   z-index: -2;
+}
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}

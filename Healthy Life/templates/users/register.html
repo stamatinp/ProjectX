@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+{{ super() }}
+<center>
+<h1 class="fade-in">Register</h1>
+<style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInAnimation ease-in-out 4s forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="/register" method="post">
+    <label for="username">Username</label>
+    <br>
+    <input type="text" name="username" value="{{username}}" required style="text-align: center; border-radius: 8px">
+    <br>
+    <label for="password">Password</label>
+    <br>
+    <input type="password" name="password" value="{{password}}"required style="text-align: center; border-radius: 8px">
+    <br>
+    <label for="password2">Retype Password</label>
+    <br>
+    <input type="password" name="password2" value="{{password2}}"required style="text-align: center; border-radius: 8px">
+    <br>
+    <br>
+    {% if eroare %}
+        <p id="eroare">{{eroare}}</p>
+    {% endif %}
+    <br>
+    <input type="submit" name="register" value="Register">
+</form>
+</center>
+{% endblock %}
